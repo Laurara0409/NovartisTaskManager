@@ -136,6 +136,7 @@
             this.label10.Size = new System.Drawing.Size(39, 16);
             this.label10.TabIndex = 18;
             this.label10.Text = "INFO";
+            this.label10.Click += new System.EventHandler(this.label10_Click_1);
             // 
             // groupBox3
             // 
@@ -176,6 +177,7 @@
             this.label11.Size = new System.Drawing.Size(41, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "INFO";
+            this.label11.Click += new System.EventHandler(this.label11_Click_1);
             // 
             // label12
             // 
@@ -213,6 +215,7 @@
             this.label13.Size = new System.Drawing.Size(41, 17);
             this.label13.TabIndex = 21;
             this.label13.Text = "INFO";
+            this.label13.Click += new System.EventHandler(this.label13_Click_1);
             // 
             // label14
             // 
@@ -247,6 +250,7 @@
             this.label15.Size = new System.Drawing.Size(41, 17);
             this.label15.TabIndex = 22;
             this.label15.Text = "INFO";
+            this.label15.Click += new System.EventHandler(this.label15_Click_1);
             // 
             // label16
             // 
@@ -281,6 +285,7 @@
             this.label17.Size = new System.Drawing.Size(41, 17);
             this.label17.TabIndex = 23;
             this.label17.Text = "INFO";
+            this.label17.Click += new System.EventHandler(this.label17_Click_1);
             // 
             // label18
             // 
@@ -334,6 +339,7 @@
             this.button2.Text = "提交";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button8
             // 
@@ -396,6 +402,7 @@
             this.button7.Text = "通过";
             this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // panel8
             // 
@@ -420,6 +427,7 @@
             this.textBox2.Size = new System.Drawing.Size(165, 77);
             this.textBox2.TabIndex = 37;
             this.textBox2.Text = "请填写暂停原因";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // button1
             // 
@@ -438,6 +446,7 @@
             this.button1.Text = "暂停";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel7
             // 
@@ -462,6 +471,7 @@
             this.textBox1.Size = new System.Drawing.Size(169, 77);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "请填写退回原因";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // button6
             // 

@@ -49,12 +49,12 @@ namespace NovartisTaskManager
 
         }
         //提交
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
 
         }
         //通过
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -64,17 +64,18 @@ namespace NovartisTaskManager
 
         }
         //暂停
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
+
         //退回原因
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
         //暂停原因
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -132,31 +133,31 @@ namespace NovartisTaskManager
 
         }
         //User
-        private void label10_Click(object sender, EventArgs e)
+        private void label10_Click_1(object sender, EventArgs e)
         {
 
         }
         //总任务
-        private void label11_Click(object sender, EventArgs e)
+        private void label11_Click_1(object sender, EventArgs e)
         {
 
         }
+
         //已质检
-        private void label13_Click(object sender, EventArgs e)
+        private void label13_Click_1(object sender, EventArgs e)
         {
 
         }
         //质检通过
-        private void label15_Click(object sender, EventArgs e)
+        private void label15_Click_1(object sender, EventArgs e)
         {
 
         }
         //质检未通过
-        private void label17_Click(object sender, EventArgs e)
+        private void label17_Click_1(object sender, EventArgs e)
         {
 
         }
-
         #region
         private void applyTaskbyDefault()
         {
@@ -164,5 +165,23 @@ namespace NovartisTaskManager
 
         }
         #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
     }
 }
