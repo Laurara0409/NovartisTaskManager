@@ -41,7 +41,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(114, 81);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 24);
+            this.textBox1.Size = new System.Drawing.Size(347, 32);
             this.textBox1.TabIndex = 0;
             // 
             // label1
@@ -50,7 +50,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(49, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 17);
+            this.label1.Size = new System.Drawing.Size(55, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "URL:";
             // 
@@ -76,6 +76,7 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "请输入存放地址：";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel2
             // 
@@ -88,7 +89,7 @@
             // 
             // FormCopyFiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(845, 490);

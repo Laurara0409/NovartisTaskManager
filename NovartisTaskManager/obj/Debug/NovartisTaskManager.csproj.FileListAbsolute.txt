@@ -44,3 +44,6 @@ C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\No
 C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe
 C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.pdb
 C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csprojResolveAssemblyReference.cache
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe.config
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.exe
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.pdb

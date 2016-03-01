@@ -62,5 +62,10 @@ namespace NovartisTaskManager.Forms
                 //复制任务到当前directory
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            //蜜月转
+        }
     }
 }
