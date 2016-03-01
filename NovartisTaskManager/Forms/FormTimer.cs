@@ -35,10 +35,17 @@ namespace NovartisTaskManager
             string abc = this.getTimeCost();
             output("计时进行中: " + abc + " ; 当前时间:" + DateTime.Now.ToString("T"));
         }
+
+        public bool checkLunchTime()
+        {
+            bool lunchtime = true;
+
+            return lunchtime;
+        }
         public string getTimeCost()
         {
             string timecost = null;
-            if (running == true)
+            if (running == true )
             {
                 sec++;
                 if (sec == 60)
@@ -81,6 +88,11 @@ namespace NovartisTaskManager
         private void button1_Click(object sender, EventArgs e)
         {
             this.running = false;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

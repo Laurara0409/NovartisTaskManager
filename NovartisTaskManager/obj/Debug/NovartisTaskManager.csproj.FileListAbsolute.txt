@@ -47,3 +47,17 @@ C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\No
 C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe.config
 C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.exe
 C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.pdb
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.pdb
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csprojResolveAssemblyReference.cache
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Dialog.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Forms.FormCopyFiles.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormHelp.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormApplyTask.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormLogin.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormManage.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormOperate.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormQC1.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormTimer.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Properties.Resources.resources
+C:\Users\BruceT450S\Documents\GitHub\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csproj.GenerateResource.Cache

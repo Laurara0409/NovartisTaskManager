@@ -59,10 +59,13 @@ namespace NovartisTaskManager
              string folderName = srcdir.Substring(srcdir.LastIndexOf("\\") + 1);//截取文件夹文件名
              
              string desfolderdir = desdir + "\\" + folderName;//设置目标文件夹目录
-             if (desdir.LastIndexOf("\\") == (desdir.Length - 1))
-             { 
+             if (desdir.LastIndexOf("\\") == (desdir.Length - 1))//如果最后的\ 是最后的字符
+             { //就把文件夹名放到目标地址后面
                  desfolderdir = desdir + folderName; 
              }
+            else{
+                desfolderdir = desdir + "\\" + folderName;
+            }
              string[] filenames = Directory.GetFileSystemEntries(srcdir);
              foreach (string file in filenames)// 遍历所有的文件和目录        
              {
@@ -73,8 +76,8 @@ namespace NovartisTaskManager
                      {
                          Directory.CreateDirectory(currentdir);
                      }
-                     CopyDirectory(file, desfolderdir);
-                 }
+                     CopyDirectory(file, desfolderdir);//如果内部嵌套文件夹，递归
+                }
                  else // 否则直接copy文件             
                  {
                      string srcfileName = file.Substring(file.LastIndexOf("\\") + 1);
@@ -83,22 +86,60 @@ namespace NovartisTaskManager
                      {
                          Directory.CreateDirectory(desfolderdir);
                      }
-                     if (File.Exists(desfolderdir))
-                     {
+                    if (File.Exists(srcfileName)) { 
                          File.Copy(file, srcfileName);
-                     }
-                 }
+                    }
+                }
              }//foreach       
          }
         /// <summary>
         /// 存放到以今天时间命名的文件夹下面
         /// </summary>
-        /// <param name="resdir">源文件路径</param>
-         private void copytoTodayFolder(string resdir)
+        /// <param name="srcdir">源文件路径</param>
+         private void copytoTodayFolder(string srcdir,string desdir)
          {
-             string today = System.DateTime.Now.ToString("yy-MM-dd");
-             string desdir = resdir.Substring(resdir.IndexOf("\\") + 1);
-         }
+             string today = System.DateTime.Now.ToString("yyyy-MM-dd");
+            //string foldername = resdir.Substring(resdir.IndexOf("\\") + 1);
+            string realDesDir = null;
+            if (desdir.LastIndexOf("\\")==desdir.Length-1){
+
+                realDesDir = desdir + today;
+
+            }
+            else
+            {
+                realDesDir = desdir + "\\" + today;
+                
+            }
+            string[] filenames = Directory.GetFileSystemEntries(srcdir);
+            foreach (string file in filenames)// 遍历所有的文件和目录        
+            {
+                if (Directory.Exists(file))// 先当作目录处理如果存在这个目录就递归Copy该目录下面的文件            
+                {
+                    
+                    string currentdir = realDesDir+ "\\" + file.Substring(file.LastIndexOf("\\") + 1);
+                    if (!Directory.Exists(currentdir))
+                    {
+                        Directory.CreateDirectory(currentdir);
+                    }
+                    copytoTodayFolder(file, realDesDir);//如果内部嵌套文件夹，递归
+                }
+                else // 否则直接copy文件             
+                {
+                    string srcfileName = file.Substring(file.LastIndexOf("\\") + 1);
+                    srcfileName = realDesDir+ "\\" + srcfileName;
+                    if (!Directory.Exists(realDesDir))
+                    {
+                        Directory.CreateDirectory(realDesDir);
+                    }
+
+                    if (!File.Exists(srcfileName))
+                    {
+                        File.Copy(file, srcfileName);
+                    }
+            }
+            }//foreach   
+        }
         public void updateDataGrid()//查询当天所有文件和前一天未完成的
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
@@ -160,8 +201,9 @@ namespace NovartisTaskManager
 
 
 
-        /// <summary>        /// 拷贝文件夹        /// </summary>        /// <param name="srcdir"></param>        /// <param name="desdir"></param>       
-
+        /// <summary>        /// 拷贝文件夹        /// </summary>       
+        ///  /// <param name="srcdir"></param>       
+        ///  /// <param name="desdir"></param>       
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -170,13 +212,6 @@ namespace NovartisTaskManager
         //导入文件夹信息到列表
         private void button1_Click(object sender, EventArgs e)
         {
-
-            try { }
-            catch (Exception ex)
-            { }
-            finally
-            { }
-
 
             string path = this.textBox1.Text;
             //dbm = new DBManage();
@@ -187,8 +222,6 @@ namespace NovartisTaskManager
             }
             else
             {
-
-
                 DirectoryInfo folder = new DirectoryInfo(path);
                 //List<Task> FileList = new List<Task>();
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
@@ -197,14 +230,13 @@ namespace NovartisTaskManager
                 if (folder.Exists && c2.Exists)
                 {
 
-                    this.CopyDirectory(path, copypath);
+                    this.copytoTodayFolder(path, copypath);
                     foreach (FileInfo files in folder.GetFiles())//获取子文件列表
                     {
-
-                        //MessageBox.Show(copypath);
                         dbm.insertTask(files.Name, files.FullName);//将每一条数据插入到数据库中
-                        //FileList.Add(TA);//从书库查询每一条数据插入到FILEList
+
                     }
+
                     MessageBox.Show("复制成功,保存路径：" + copypath);
                     this.updateDataGrid();
                 }
