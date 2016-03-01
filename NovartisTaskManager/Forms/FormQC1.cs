@@ -79,12 +79,10 @@ namespace NovartisTaskManager
         {
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void groupBox1_Enter_1(object sender, EventArgs e)
         {
-           // groupBox1.
-        }
 
+        }
         private void FormQC1_Load(object sender, EventArgs e)
         {
 
@@ -165,6 +163,8 @@ namespace NovartisTaskManager
 
         }
         #endregion
+
+
 
 
 
