@@ -121,45 +121,42 @@ namespace NovartisTaskManager
             }
             return null;
         }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.GetRadioButton(groupBox1);
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //流转
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        //完成
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        //User
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+        //总任务
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+        //已质检
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+        //质检通过
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+        //质检未通过
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #region
         private void applyTaskbyDefault()
         {
