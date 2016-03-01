@@ -1,0 +1,46 @@
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe.config
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.pdb
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormLogin.resources
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormManage.resources
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormOperate.resources
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Properties.Resources.resources
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csproj.GenerateResource.Cache
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.exe
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.pdb
+C:\Users\temp\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csprojResolveAssemblyReference.cache
+C:\Users\temp\documents\visual studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Dialog.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe.config
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.exe
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.pdb
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormLogin.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormManage.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormOperate.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Properties.Resources.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csproj.GenerateResource.Cache
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.pdb
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Dialog.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormApplyTask.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormTimer.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csprojResolveAssemblyReference.cache
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormHelp.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormQC1.resources
+D:\Programming\Accenture\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Forms.FormCopyFiles.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe.config
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.exe
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.pdb
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Dialog.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Forms.FormCopyFiles.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormHelp.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormApplyTask.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormLogin.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormManage.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormOperate.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormQC1.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.FormTimer.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.Properties.Resources.resources
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csproj.GenerateResource.Cache
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.exe
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\bin\Debug\NovartisTaskManager.pdb
+C:\Users\jiarui.luo\Documents\Visual Studio 2013\Projects\NovartisTaskManager\NovartisTaskManager\obj\Debug\NovartisTaskManager.csprojResolveAssemblyReference.cache

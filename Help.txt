@@ -1,0 +1,41 @@
+ACE OLEDB 12.0连接方式
+Xlsx文件
+    这是用来连接带Xlsx扩展名的Excel 2007文件。这是不带宏的Office Open XML格式。
+以下是语法格式：
+Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\myFolder\myExcel2007file.xlsx;Extended Properties="Excel 12.0 Xml;HDR=YES";
+   "HDR=yes;"是说第一行是列名而不是数据。"HDR=No;"正好与前面的相反。
+ 
+把数据当做文本对待
+   使用这条连接当你想把所有的数据都当做文本对待时，覆盖Excel通常的猜测这列的数据类型。
+以下是语法格式：
+Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\myFolder\myExcel2007file.xlsx;Extended Properties="Excel 12.0 Xml;HDR=YES;IMEX=1";
+   如果你想把列名也读到结果集中(使用“HDR=NO”尽管第一行是列名)并且列中的数据是数值型的，使用“IMEX=1”可必免冲突。
+　　使用"IMEX=1"检索混合数据列是一种安全的方法。试想一下，当Driver检索出数据列中有一种数据类型的excel文件可以正常工作，而另一个excel文件(某列)被检测出两种类型，这会造成你的程序的冲突。
+ 
+Xlsb文件
+　　这是用来连接带Xlsb扩展名的Excel 2007文件。这是一种保存为二进制的Office Open XML格式。 不像Xlsx文件那种可读的文件格式。此种格式在数据量大时可以提升性能。
+以下是语法格式：
+Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\myFolder\myBinaryExcel2007file.xlsb;Extended Properties="Excel 12.0;HDR=YES";
+   "HDR=yes;"是说第一行是列名而不是数据。"HDR=No;"正好与前面的相反。
+ 
+Xlsm文件
+　　　这是用来连接带Xlsm扩展名的Excel 2007文件。这是带宏的Office Open XML格式。
+以下是语法格式：
+Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\myFolder\myExcel2007file.xlsm;Extended Properties="Excel 12.0 Macro;HDR=YES";
+   注意：字符串中的引号"要用你的程序的语言的转义语法转义一下。
+   在C中为　\"  ,   VB,VBScript为　""
+   XML(Web.config etc)  &quot; , 或者可以使用单引号。
+
+附：
+在编程环境下，比如C#编程环境，要构成连接字符串。而字符串要放到双引号内，比如:
+string connString =string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=Excel 8.0", filePath);
+filePath是excel文件的目录。
+如果Extended Properties需要加其他的属性，比如：IMEX=1
+这时字符串要写成这样：
+string connString =
+                string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;IMEX=1'",
+                              filePath);
+注意单引号。
+
+转自： 
+http://www.cnblogs.com/chuncn/archive/2009/06/09/1499301.html
