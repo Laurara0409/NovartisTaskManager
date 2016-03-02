@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessClass\DBManage.cs" />
+    <Compile Include="BusinessClass\Timer.cs" />
     <Compile Include="Forms\FormCopyFiles.cs">
       <SubType>Form</SubType>
     </Compile>

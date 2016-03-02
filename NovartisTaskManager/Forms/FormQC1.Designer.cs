@@ -64,6 +64,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -336,6 +337,7 @@
             this.button2.Text = "提交";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button8
             // 
@@ -446,6 +448,7 @@
             this.button1.Text = "暂停";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel7
             // 
@@ -514,6 +517,10 @@
             this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 43;
             this.label2.Text = "准备计时";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
             // 
             // FormQC1
             // 
@@ -589,5 +596,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

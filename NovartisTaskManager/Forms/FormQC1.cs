@@ -9,7 +9,7 @@ namespace NovartisTaskManager
 
         private User u1;
         private DBManage dbm;
-        private Timer t1;
+        //private Timer t1;
         public FormQC1()
         {
             InitializeComponent();
@@ -65,9 +65,18 @@ namespace NovartisTaskManager
             {
                 MessageBox.Show("已经将地址复制到剪贴板" + copypath, "申请成功！");
                 dbm.updateQCIDtoTask(u1, copypath);
-                FormTimer ftimer = new FormTimer();
-                ftimer.Show();
+                //FormTimer ftimer = new FormTimer();
+                //ftimer.Show();
+                label1.Text = "计时开始";
+                resetTimer();
+                timer2.Enabled = true;
             }
+        }
+        private void resetTimer()
+        {
+            this.sec = 0;
+            this.min = 0;
+            this.hr = 0;
         }
         //提交
         private void button2_Click(object sender, EventArgs e)
@@ -109,8 +118,29 @@ namespace NovartisTaskManager
         {
 
         }
+        private int sec = 0, min = 0, hr = 0;
+        public string getTimeRunning()
+        {
+            string timecost = null;
+            if (this.timer2.Enabled == true)
+            {
+                sec++;
+                if (sec == 60)
+                {
+                    sec = 0;
+                    min += 1;
+                }
+                if (min == 60)
+                {
+                    hr += 1;
+                    min = 0;
+                }
 
-       
+            }
+            timecost = hr + ":" + min + ":" + sec;
+            return timecost;
+        }
+
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
             foreach(Control ctr in this.Controls)
@@ -186,6 +216,16 @@ namespace NovartisTaskManager
         }
         #endregion
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timer2.Enabled = false;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            timer2.Enabled = false;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.getCurrentStatus();
@@ -196,10 +236,10 @@ namespace NovartisTaskManager
 
             return lunchtime;
         }
-        public string getTimeCost()
-        {
-            t1 = new BusinessClass.Timer();
-            return null;
-        }
+        //public string getTimeCost()
+        //{
+        //    t1 = new BusinessClass.Timer();
+        //    return null;
+        //}
     }
 }

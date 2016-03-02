@@ -112,7 +112,12 @@ namespace NovartisTaskManager
         {
 
         }
-
+        private void resetTimer()
+        {
+            this.sec = 0;
+            this.min = 0;
+            this.hr = 0;
+        }
         private void button8_Click(object sender, EventArgs e)
         {
             //dbm.applyTask("排序条件");//查询任务 显示任务路径
@@ -127,14 +132,18 @@ namespace NovartisTaskManager
             {
                 MessageBox.Show("已经将地址复制到剪贴板" + copypath, "申请成功！");
                 dbm.updateEDITORIDtoTask(u1, copypath);
-                FormTimer ftimer = new FormTimer();
-                ftimer.Show();
+                //FormTimer ftimer = new FormTimer();
+                //ftimer.Show();
+                label10.Text = "计时开始";
+                resetTimer();
+                this.timer2.Enabled = true;
+
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            timer2.Enabled = false;
         }
         private void finishTask(string TID) {
             //更新任务数据库信息
@@ -142,7 +151,7 @@ namespace NovartisTaskManager
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            timer2.Enabled = false;
         }
         private void retreatTask(string tid)
         {
@@ -157,6 +166,40 @@ namespace NovartisTaskManager
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.getCurrentStatus();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            string timer = this.getTimeRunning();
+            label10.Text = timer;
+        }
+        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.timer2.Enabled = false;
+        }
+        private int sec = 0, min = 0, hr = 0;
+        public string getTimeRunning()
+        {
+            string timecost = null;
+            if (this.timer2.Enabled == true)
+            {
+                sec++;
+                if (sec == 60)
+                {
+                    sec = 0;
+                    min += 1;
+                }
+                if (min == 60)
+                {
+                    hr += 1;
+                    min = 0;
+                }
+
+            }
+            timecost = hr + ":" + min + ":" + sec;
+            return timecost;
         }
     }
 }

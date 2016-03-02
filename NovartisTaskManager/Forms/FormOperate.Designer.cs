@@ -53,6 +53,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,7 +121,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(417, 194);
+            this.textBox1.Location = new System.Drawing.Point(207, 191);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(556, 133);
@@ -260,7 +262,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(242, 194);
+            this.button5.Location = new System.Drawing.Point(32, 191);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(93, 118);
@@ -268,6 +270,7 @@
             this.button5.Text = "暂停";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -279,7 +282,7 @@
             this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(885, 26);
+            this.button6.Location = new System.Drawing.Point(675, 23);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 118);
@@ -299,7 +302,7 @@
             this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button7.Location = new System.Drawing.Point(552, 26);
+            this.button7.Location = new System.Drawing.Point(342, 23);
             this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(93, 118);
@@ -321,7 +324,7 @@
             this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button8.Location = new System.Drawing.Point(242, 26);
+            this.button8.Location = new System.Drawing.Point(32, 23);
             this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(93, 118);
@@ -334,6 +337,7 @@
             // panel5
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.button6);
             this.panel5.Controls.Add(this.button7);
             this.panel5.Controls.Add(this.button8);
@@ -368,6 +372,20 @@
             this.pictureBox1.Size = new System.Drawing.Size(74, 77);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1027, 182);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 20);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "label10";
             // 
             // FormOperate
             // 
@@ -426,5 +444,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label10;
     }
 }
