@@ -137,7 +137,7 @@ namespace NovartisTaskManager
             }
             }//foreach   
         }
-        public void updateDataGrid()//查询当天所有文件和前一天未完成的
+        public void updateDataGrid()//查询当天所有文件
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
             
@@ -149,7 +149,10 @@ namespace NovartisTaskManager
                 this.dataGridView1.DataSource = dt;
                 
             }
-            else MessageBox.Show("无任何内容");
+            else MessageBox.Show("无任何内容","警告");
+            this.label5.Text = (dbm.countTasksbyDate(date)).ToString();
+            this.label7.Text = dbm.countStatusTask("complete", date).ToString();
+            this.label9.Text = dbm.countStatusTask("passed", date).ToString();
 
         }
         public void getTasksFromFolder(string url)
@@ -194,6 +197,7 @@ namespace NovartisTaskManager
         private void timer1_Tick(object sender, EventArgs e)//每分钟更新数据表
         {
             this.updateDataGrid();
+
         }
 
 
@@ -252,10 +256,28 @@ namespace NovartisTaskManager
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
+            int rowindes = e.RowIndex;
+            int columindex = e.ColumnIndex;
+            string cotent = this.dataGridView1.Rows[rowindes].Cells[columindex].Value.ToString();
+            if (cotent != string.Empty)
+            {
+                Clipboard.SetDataObject(cotent);
+                MessageBox.Show("已复制地址到剪贴板");
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.updateDataGrid();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -63,6 +63,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -350,6 +356,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1264, 105);
             this.panel6.TabIndex = 25;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // pictureBox1
             // 

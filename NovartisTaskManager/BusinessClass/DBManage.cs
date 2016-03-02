@@ -16,6 +16,7 @@ namespace NovartisTaskManager
         private User us;
         private Task t1;
         private DataTable dt1;
+        private Statement st1;
         
 
         public DBManage(){
@@ -33,11 +34,48 @@ namespace NovartisTaskManager
 
         public void getConnection()
         {
-
             if (conn.State == ConnectionState.Closed) conn.Open();
-
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="userrole"> VALUE=EDITORIDorQCID</param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public int getUserTasksInfo(string userrole, string uid, string status)
+        {
+            int res = 0;
+            string sql = "select COUNT(*) from TASK where " + userrole + "='" + uid + "' and status ='" + status + "'";
+            getConnection();
+            OleDbCommand com = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = com.ExecuteReader();
+            if (reader.Read()) {
+                res = reader.GetInt32(0);
+                return res;
+            }
 
+
+            return res;
+        }
+        public int getUserTotoalTasks(string userrole, string uid)
+        {
+            int res = 0;
+            string sql = "select COUNT(*) from TASK where " + userrole + "='" + uid + "'" ;
+            getConnection();
+            OleDbCommand com = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = com.ExecuteReader();
+            if (reader.Read())
+            {
+                res = reader.GetInt32(0);
+                reader.Close();
+                conn.Close();
+                return res;
+            }
+
+
+            return res;
+        }
         #region QueryUser
         public User queryUser(string uid)
         {
@@ -131,7 +169,6 @@ namespace NovartisTaskManager
             DirectoryInfo ctoday = new DirectoryInfo(realCopyPath);
             if (ctoday.Exists)
             {
-                MessageBox.Show("exists");
                 foreach (FileInfo finfo in ctoday.GetFiles()) {
                     //将新考入的文件地址更新到数据库
                     string finalcopypath = finfo.FullName;
@@ -168,26 +205,109 @@ namespace NovartisTaskManager
             conn.Close();
             return true;
         }
-
-        public string applyTask(string conditon)
+        public void updateEDITORIDtoTask(User U,string path)
+        {
+            string sql = "update Task set EDITORID ='" + U.ID + "' where COPYPATH='" + path + "'";
+            getConnection();
+            OleDbCommand dbcom = new OleDbCommand(sql, conn);
+            dbcom.ExecuteNonQuery();
+        }
+        public void updateQCIDtoTask(User U, string path)
+        {
+            string sql = "update Task set QCID ='" + U.ID + "' where COPYPATH='" + path + "'";
+            getConnection();
+            OleDbCommand dbcom = new OleDbCommand(sql, conn);
+            dbcom.ExecuteNonQuery();
+        }
+        public string applyTaskforEditor(string conditon)
         {
             string path;
-            string sql = "select TPAT from Task where complete = 'FALSE' and status='not occupied' order by'" + conditon + ",";
+            string sql = "select TOP 1 COPYPATH from Task where status is NULL order by'" + conditon + "'";
+            this.getConnection();
             OleDbCommand dbcom = new OleDbCommand(sql, conn);
             OleDbDataReader reader = dbcom.ExecuteReader();
             if (reader.Read())
             {
                 path = reader.GetString(0);
+                Clipboard.SetDataObject(path);
+                updateTaskStatus(path, "occupied");
+                conn.Close();
                 return path;
             }
             else
             {
-                return "没结果";
+                return "申请失败";
             }
 
-            
+
         }
-       
+        public string applyTaskforQC(string conditon)
+        {
+            string path;
+            string sql = "select TOP 1 COPYPATH from Task where status = 'complete' order by'" + conditon + "'";
+            this.getConnection();
+            OleDbCommand dbcom = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = dbcom.ExecuteReader();
+            if (reader.Read())
+            {
+                path = reader.GetString(0);
+                Clipboard.SetDataObject(path);
+                updateTaskStatus(path, "occupied");
+                conn.Close();
+                return path;
+            }
+            else
+            {
+                return "申请失败";
+            }
+
+
+        }
+
+        private void updateTaskStatus(string path,string status)
+        {
+            string sql = "update TASK set STATUS = '" + status + "' where COPYPATH='" + path + "'";
+            this.getConnection();
+            OleDbCommand comm = new OleDbCommand(sql, conn);
+            comm.ExecuteNonQuery();
+            conn.Close();
+
+        }
+        public int countTasksbyDate(string date)
+        {
+            int count = 0;
+            string sql = "select COUNT(TID) from TASK where DATE='" + date + "'";
+            this.getConnection();
+            OleDbCommand oldcom = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = oldcom.ExecuteReader();
+            if (reader.Read())
+            {
+                count = reader.GetInt32(0);
+                reader.Close();
+                conn.Close();
+            }
+            return count;
+        }/// <summary>
+         /// 计算已经完成，或者通过质检的当日任务数量
+         /// </summary>
+         /// <param name="status">为空，complete,passed,occupied</param>
+         /// <returns></returns>
+        public int countStatusTask(string status,string date)
+
+        {
+            int count = 0;
+            string sql = "select COUNT(TID) from TASK where DATE='" + date + "' and STATUS = '"+status+"'";
+            this.getConnection();
+            OleDbCommand oldcom = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = oldcom.ExecuteReader();
+            if (reader.Read())
+            {
+                count = reader.GetInt32(0);
+                reader.Close();
+                conn.Close();
+            }
+            return count;
+        }
 
        
 

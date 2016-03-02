@@ -1,11 +1,6 @@
 ﻿using NovartisTaskManager.BusinessClass;
+using NovartisTaskManager.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,11 +11,15 @@ namespace NovartisTaskManager
 
         private DBManage dbm;
         private User u1;
+        private Model.Task t1;
+        private Statement st1;
  
         public FormOperate(User u)
         {
+            u1 = u;
+            dbm = new DBManage();
             InitializeComponent();
-
+            this.getCurrentStatus();
             //this.textBox6.Text = u.getUserName();
             switch (u.type)
             {
@@ -39,35 +38,14 @@ namespace NovartisTaskManager
             }
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //查询文件路径，显示文件路径，更新TASK 数据库
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             this.Text = "请输入原因";
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FormOperate_Load(object sender, EventArgs e)
@@ -75,13 +53,14 @@ namespace NovartisTaskManager
 
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void getCurrentStatus(User U)
+        private void getCurrentStatus()
         {
             //获取当前用户信息 总任务，已完成，已退回，已质检
+            label5.Text=(dbm.getUserTotoalTasks("EDITORID", u1.ID)).ToString();
+            label6.Text = (dbm.getUserTasksInfo("EDITORID", u1.ID, "complete").ToString());
+            label7.Text = "0";
+            label9.Text = (dbm.getUserTasksInfo("EDITORID", u1.ID, "passed").ToString());
+
         }
 
         private void button2_Click(object sender, EventArgs e)//完成任务
@@ -102,20 +81,12 @@ namespace NovartisTaskManager
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void label8_Click(object sender, EventArgs e)
         {
@@ -146,8 +117,19 @@ namespace NovartisTaskManager
         {
             //dbm.applyTask("排序条件");//查询任务 显示任务路径
             //FormTimer ftimer = new FormTimer();//计时器开始计时
-            FormTimer ftimer = new FormTimer();
-            ftimer.Show();
+            string copypath = dbm.applyTaskforEditor("TID");
+
+            if (copypath == "申请失败")
+            {
+                MessageBox.Show("没有新任务无法申请!");
+            }
+            else
+            {
+                MessageBox.Show("已经将地址复制到剪贴板" + copypath, "申请成功！");
+                dbm.updateEDITORIDtoTask(u1, copypath);
+                FormTimer ftimer = new FormTimer();
+                ftimer.Show();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -165,6 +147,16 @@ namespace NovartisTaskManager
         private void retreatTask(string tid)
         {
             // 退回当前任务，更新数据库信息
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.getCurrentStatus();
         }
     }
 }
