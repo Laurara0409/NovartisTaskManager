@@ -3,6 +3,8 @@ using NovartisTaskManager.Model;
 using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
+using System.IO;
+using System.Windows.Forms;
 // 数据库操作 ，User 表，Task表
 namespace NovartisTaskManager
 {
@@ -79,7 +81,7 @@ namespace NovartisTaskManager
             if (queryTaskbyPath(tpath) == null)
             {
                 string date = System.DateTime.Now.ToString("yyyy-MM-dd");
-                string sql = "insert into [TASK]([TNAME],[TPATH],[DATE]) values(' " + tname + "','" + tpath + "','" + date + "')";
+                string sql = "insert into [TASK]([TNAME],[TPATH],[DATE]) values('" + tname + "','" + tpath + "','" + date + "')";
                 this.getConnection();
                 OleDbCommand oldbCom = new OleDbCommand(sql, conn);
                 oldbCom.ExecuteNonQuery();
@@ -122,7 +124,27 @@ namespace NovartisTaskManager
         #endregion
 
    
+        public bool updateTaskCopyPath(string copypath,string publicpath)
+        {
+            string todaydate = System.DateTime.Now.ToString("yyyy-MM-dd");
+            string realCopyPath = copypath + "\\" + todaydate;
+            DirectoryInfo ctoday = new DirectoryInfo(realCopyPath);
+            if (ctoday.Exists)
+            {
+                MessageBox.Show("exists");
+                foreach (FileInfo finfo in ctoday.GetFiles()) {
+                    //将新考入的文件地址更新到数据库
+                    string finalcopypath = finfo.FullName;
+                    string sql = "update TASK set [COPYPATH]='" + finalcopypath + "' where [Tname]='"  + finfo.Name + "' and [DATE]='"+todaydate+"'";
+                    updateData(sql);
+                    //MessageBox.Show(finfo.Name);// 成功
+                }
 
+            }
+
+
+            return true;
+        }
 
         public bool insertData(string str)
         {
@@ -139,9 +161,10 @@ namespace NovartisTaskManager
         /// <returns></returns>
         public bool updateData(string str)
         {
+            this.getConnection();
             OleDbCommand odbc = new OleDbCommand(str, conn);
             odbc.ExecuteNonQuery();
-            this.getConnection();
+            
             conn.Close();
             return true;
         }

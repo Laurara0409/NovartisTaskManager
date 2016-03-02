@@ -1,10 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
-using System.Data.OleDb;
 using NovartisTaskManager.BusinessClass;
-using NovartisTaskManager.Model;
 using System.Data;
 using System.Configuration;
 
@@ -152,7 +149,7 @@ namespace NovartisTaskManager
                 this.dataGridView1.DataSource = dt;
                 
             }
-            else MessageBox.Show("Error");
+            else MessageBox.Show("无任何内容");
 
         }
         public void getTasksFromFolder(string url)
@@ -231,11 +228,14 @@ namespace NovartisTaskManager
                 {
 
                     this.copytoTodayFolder(path, copypath);
+                    //将子文件复制到“copypath"文件夹(directory)内的以当体日期（yyyy-MM-dd)命名的文件夹内
+
                     foreach (FileInfo files in folder.GetFiles())//获取子文件列表
                     {
                         dbm.insertTask(files.Name, files.FullName);//将每一条数据插入到数据库中
 
                     }
+                    dbm.updateTaskCopyPath(copypath, path);
 
                     MessageBox.Show("复制成功,保存路径：" + copypath);
                     this.updateDataGrid();
@@ -255,11 +255,9 @@ namespace NovartisTaskManager
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }

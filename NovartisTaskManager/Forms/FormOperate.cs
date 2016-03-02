@@ -144,7 +144,26 @@ namespace NovartisTaskManager
 
         private void button8_Click(object sender, EventArgs e)
         {
+           // dbm.applyTask("排序条件");//查询任务 显示任务路径
+            FormTimer ftimer = new FormTimer();//计时器开始计时
+            ftimer.Show();
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void finishTask(string TID) {
+            //更新任务数据库信息
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void retreatTask(string tid)
+        {
+            // 退回当前任务，更新数据库信息
         }
     }
 }
