@@ -9,12 +9,6 @@ namespace NovartisTaskManager
 
         private User u1;
         private DBManage dbm;
-        public FormQC1()
-        {
-            InitializeComponent();
-            //判断用户类型 显示/隐藏 某些特殊模块
-            
-        }
 
         private void checkUserType(User u1)
         {
@@ -46,22 +40,42 @@ namespace NovartisTaskManager
        //申请
         private void button8_Click(object sender, EventArgs e)
         {
-
+            dbm.getConnection();
+            int count = dbm.applyQC1();
+            this.label11.Text=count.ToString();
+            MessageBox.Show("申请成功");
         }
-        //提交
-        private void button2_Click_1(object sender, EventArgs e)
-        {
 
-        }
         //通过
         private void button7_Click_1(object sender, EventArgs e)
         {
+            //设置QCSTATUS=1,质检通过count+1显示在label15,标记为已经操作完成还是需要流转到下一个组
+            if (radioButton1.Checked == true && radioButton2.Checked == false)
+            {
+                //存到2组文件夹
 
+            }
+            else if (radioButton1.Checked == false && radioButton2.Checked == true)
+            {
+                //完成，
+
+            }
+            else MessageBox.Show("请选择通过方式");
+
+            dbm.getConnection();
+            int count = dbm.passQC1();
+            this.label15.Text = count.ToString();
+            MessageBox.Show("已通过");
+            
         }
         //退回
         private void button6_Click(object sender, EventArgs e)
         {
-
+            //设置QCSTATUS=2,质检未通过count+1显示在label17,打回给操作者本人，并附上未通过原因
+            dbm.getConnection();
+            int count = dbm.backQC1();
+            this.label17.Text = count.ToString();
+            MessageBox.Show("已退回");
         }
         //暂停
         private void button1_Click_1(object sender, EventArgs e)
@@ -70,89 +84,53 @@ namespace NovartisTaskManager
         }
 
         //退回原因
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            this.textBox1.Text = string.Empty;
+        } 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
+            //读出textbox的内容，退回原因存入数据库？？？
+            string backreason = textBox1.Text;
 
         }
         //暂停原因
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-
+            //读出textbox的内容，暂停原因存入数据库？？？
+            string pausereason = textBox2.Text;
         }
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
-
         }
         private void FormQC1_Load(object sender, EventArgs e)
         {
 
         }
+  
+        //private string GetRadioButton(GroupBox gb)
+        //{
+        //    System.Windows.Forms.Control.ControlCollection rbColl = gb.Controls;
+        //    foreach (Control radioButton in rbColl)
+        //    {
+        //        RadioButton rb = (RadioButton)radioButton;
+        //        if (rb.Checked)
+        //        {
+        //            string result = rb.Text;
+        //            MessageBox.Show(result);
+        //            return rb.Text;
+        //        }
 
-       
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-            foreach(Control ctr in this.Controls)
-            {
-                if(ctr is RadioButton)
-                {
-                    RadioButton rb = ctr as RadioButton;
-                    if (rb.Checked){
-                        //this.label1.Text = rb.Text;
-                        MessageBox.Show(rb.Text);
-                        /////3.1日修改
-                        }
-                }
-            }
-        }
-        private string GetRadioButton(GroupBox gb)
-        {
-            System.Windows.Forms.Control.ControlCollection rbColl = gb.Controls;
-            foreach (Control radioButton in rbColl)
-            {
-                RadioButton rb = (RadioButton)radioButton;
-                if (rb.Checked)
-                {
-                    string result = rb.Text;
-                    MessageBox.Show(result);
-                    return rb.Text;
-                }
-
-            }
-            return null;
-        }
+        //    }
+        //    return null;
+        //}
         //流转
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+           
         }
         //完成
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        //User
-        private void label10_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        //总任务
-        private void label11_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        //已质检
-        private void label13_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        //质检通过
-        private void label15_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        //质检未通过
-        private void label17_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -49,7 +49,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -136,7 +135,6 @@
             this.label10.Size = new System.Drawing.Size(39, 16);
             this.label10.TabIndex = 18;
             this.label10.Text = "INFO";
-            this.label10.Click += new System.EventHandler(this.label10_Click_1);
             // 
             // groupBox3
             // 
@@ -177,7 +175,6 @@
             this.label11.Size = new System.Drawing.Size(41, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "INFO";
-            this.label11.Click += new System.EventHandler(this.label11_Click_1);
             // 
             // label12
             // 
@@ -215,7 +212,6 @@
             this.label13.Size = new System.Drawing.Size(41, 17);
             this.label13.TabIndex = 21;
             this.label13.Text = "INFO";
-            this.label13.Click += new System.EventHandler(this.label13_Click_1);
             // 
             // label14
             // 
@@ -250,7 +246,6 @@
             this.label15.Size = new System.Drawing.Size(41, 17);
             this.label15.TabIndex = 22;
             this.label15.Text = "INFO";
-            this.label15.Click += new System.EventHandler(this.label15_Click_1);
             // 
             // label16
             // 
@@ -285,7 +280,6 @@
             this.label17.Size = new System.Drawing.Size(41, 17);
             this.label17.TabIndex = 23;
             this.label17.Text = "INFO";
-            this.label17.Click += new System.EventHandler(this.label17_Click_1);
             // 
             // label18
             // 
@@ -315,31 +309,11 @@
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.button2);
             this.panel10.Controls.Add(this.button8);
             this.panel10.Location = new System.Drawing.Point(110, 14);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(271, 89);
             this.panel10.TabIndex = 41;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button2.Location = new System.Drawing.Point(174, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 77);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "提交";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button8
             // 
@@ -353,7 +327,7 @@
             this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(19, 3);
+            this.button8.Location = new System.Drawing.Point(88, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(59, 77);
             this.button8.TabIndex = 20;
@@ -552,7 +526,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;

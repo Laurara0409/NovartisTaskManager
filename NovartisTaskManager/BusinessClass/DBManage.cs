@@ -184,12 +184,49 @@ namespace NovartisTaskManager
             {
                 return "没结果";
             }
-
+            
             
         }
-       
+        #region QC1
+        int acount = 0;
+        int pcount = 0;
+        int bcount = 0;
+        int alcount = 0;
+        public int applyQC1() 
+        {
+            
+            string sql = "select count(*) from STATEMENT where status='1'";
+            OleDbCommand dbcom = new OleDbCommand(sql, conn);
+            OleDbDataReader reader = dbcom.ExecuteReader();
+            if(reader.Read())
+            {
+                acount = reader.GetInt32(0);
+                alcount++;
+                
+            }
+            return acount;
+           
+        }
 
-       
+
+        public int passQC1()
+        {
+            acount--;
+            pcount++;
+            return pcount;
+        }
+        public int backQC1()
+        {
+            acount--;
+            bcount++;
+            return bcount;
+        }
+        
+
+
+        #endregion
+
+
 
 
     }
