@@ -79,7 +79,7 @@ namespace NovartisTaskManager
             if (queryTaskbyPath(tpath) == null)
             {
                 string date = System.DateTime.Now.ToString("yyyy-MM-dd");
-                string sql = "insert into [TASK]([TNAME],[TPATH],[DATE]) values(' " + tname + "','" + tpath + "','" + date + "')";
+                string sql = "insert into [TASK]([TNAME],[TPATH],[DATE]) values('" + tname + "','" + tpath + "','" + date + "')";
                 this.getConnection();
                 OleDbCommand oldbCom = new OleDbCommand(sql, conn);
                 oldbCom.ExecuteNonQuery();
