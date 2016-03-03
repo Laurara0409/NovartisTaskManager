@@ -65,8 +65,6 @@ namespace NovartisTaskManager
             {
                 MessageBox.Show("已经将地址复制到剪贴板" + copypath, "申请成功！");
                 dbm.updateQCIDtoTask(u1, copypath);
-                //FormTimer ftimer = new FormTimer();
-                //ftimer.Show();
                 label1.Text = "计时开始";
                 resetTimer();
                 timer2.Enabled = true;
